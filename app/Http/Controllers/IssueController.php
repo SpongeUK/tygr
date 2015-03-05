@@ -218,6 +218,7 @@ class IssueController extends Controller {
 		if($result) {
 			$update = new IssueHistory();
             $update->hidden     = false;
+            $update->project_id = $issue->project->id;
 			$update->issue_id   = $issue->id;
 			$update->author_id  = $issue->author->id;
 			$update->type		= 'status';
@@ -248,7 +249,9 @@ class IssueController extends Controller {
 		// Get all of the versions for this project
 		$versions = Issue::where('project_id', '=', $project->id)->distinct()->select('version')->get();
 
-        $groups = Group::all();
+        // Only get two groups if we're client, otherwise get all
+        $groups = (Auth::user()->rank == 3) ? Group::take(2)->get() : Group::all();
+
 		return view('issues.show')
             ->with('project', $project)
             ->with('issue', $issue)
@@ -292,6 +295,7 @@ class IssueController extends Controller {
 		if($result) {
 			$update = new IssueHistory();
             $update->hidden     = false;
+            $update->project_id = $issue->project->id;
 			$update->issue_id   = $issue->id;
 			$update->author_id  = $issue->author->id;
 			$update->type		= 'status';
@@ -334,6 +338,7 @@ class IssueController extends Controller {
 
 		if(Input::get('comment')) {
 			$update = new IssueHistory();
+            $update->project_id = $issue->project->id;
 			$update->issue_id   = $issue->id;
             $update->hidden      = Input::has('hidden');
 			$update->author_id  = \Auth::user()->id;
@@ -350,6 +355,7 @@ class IssueController extends Controller {
 
 			$update = new IssueHistory();
             $update->hidden     = false;
+            $update->project_id = $issue->project->id;
 			$update->issue_id   = $issue->id;
 			$update->author_id  = \Auth::user()->id;
 			$update->type		= 'status';
@@ -375,6 +381,7 @@ class IssueController extends Controller {
 			if($result) {
 				$update = new IssueHistory();
                 $update->hidden     = false;
+                $update->project_id = $issue->project->id;
 				$update->issue_id = $issue->id;
 				$update->author_id = \Auth::user()->id;
 				$update->type = 'status';
@@ -438,6 +445,7 @@ class IssueController extends Controller {
 		if($result) {
 			$update            = new IssueHistory();
             $update->hidden    = false;
+            $update->project_id = $issue->project->id;
 			$update->issue_id  = $issue->id;
 			$update->author_id = \Auth::user()->id;
 			$update->type      = 'status';
@@ -467,6 +475,7 @@ class IssueController extends Controller {
 		if($result) {
 			$update = new IssueHistory();
             $update->hidden     = false;
+            $update->project_id = $issue->project->id;
 			$update->issue_id = $issue->id;
 			$update->author_id = \Auth::user()->id;
 			$update->type = 'status';
@@ -496,6 +505,7 @@ class IssueController extends Controller {
 		if($result) {
 			$update = new IssueHistory();
             $update->hidden     = false;
+            $update->project_id = $issue->project->id;
 			$update->issue_id = $issue->id;
 			$update->author_id = \Auth::user()->id;
 			$update->type = 'status';
