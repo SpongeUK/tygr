@@ -26,7 +26,7 @@ return [
 	|
 	*/
 
-	'url' => 'http://localhost',
+	'url' => 'http://review.spongeuk.com',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -143,6 +143,7 @@ return [
 		'App\Providers\BusServiceProvider',
 		'App\Providers\ConfigServiceProvider',
 		'App\Providers\EventServiceProvider',
+        'App\Providers\RepositoryServiceProvider',
 		'App\Providers\RouteServiceProvider',
 
 	],

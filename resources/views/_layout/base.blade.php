@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Review log - Sponge UK</title>
-    <script src="//use.typekit.net/wud4ymu.js"></script>
+    <title>@if(isset($title)) {{ $title }} - @endif Review Log - Sponge UK</title>
+    <script src="//use.typekit.net/mwm5nzt.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>
 
     <link rel="shortcut icon" href="{{ Request::root() }}/favicon.ico"/>

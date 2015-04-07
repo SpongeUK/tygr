@@ -40,7 +40,8 @@ h1 {
   clear: left; }
   h1 em {
     font-size: 22px;
-    color: #999999; }
+    color: #999999;
+    text-transform: capitalize; }
 
 h2 {
   font-size: 20px;
@@ -211,8 +212,7 @@ nav {
         background-size: 16px 13px; } }
   @media (max-width: 1000px) {
     nav {
-      width: 95px;
-      padding-top: 10px; }
+      width: 75px; }
       nav span {
         display: none; }
       nav .sponge-logo {
@@ -955,6 +955,23 @@ section {
         color: #929191;
         padding: 0;
         margin: 0; }
+  @media (max-width: 1000px) {
+    .statistics .statistic {
+      width: 50%;
+      display: block; }
+      .statistics .statistic .content.third {
+        border-left: none;
+        border-top: 1px solid #e4e4e4; }
+      .statistics .statistic .content.fourth {
+        border-top: 1px solid #e4e4e4; } }
+  @media (max-width: 650px) {
+    .statistics .statistic {
+      width: 100%; }
+      .statistics .statistic .content.second {
+        border-left: none;
+        border-top: 1px solid #e4e4e4; }
+      .statistics .statistic .content.fourth {
+        border-left: none; } }
 
 .error-status {
   text-align: center; }
